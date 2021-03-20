@@ -1,0 +1,11 @@
+version: '3'  
+services:  
+  jupyter_notebook:
+    build: .
+    environment: 
+      - JUPYTER_ENABLE_LAB=yes
+    ports:  
+      - "8888:8888"  
+    volumes:  
+      - .:/app
+    command: start-notebook.sh --NotebookApp.token=""
